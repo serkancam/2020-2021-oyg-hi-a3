@@ -124,6 +124,8 @@ class Araba:
         self.kacKm+=km
     def arabayi_boya(self,renk:str):
         self.renk=renk
+    def __str__(self):
+        return self.marka+"-"+str(self.model_yili)
 
 
 a1 = Araba("fiat",2018,"gri",56000)
@@ -133,5 +135,50 @@ print(a1.kacKm)
 print(a1.renk)
 a1.arabayi_boya("füme")
 print(a1.renk)
+
+
+# %%
+print(dir(Araba))
+# %%
+print(a1)
+
+# %%  miras(inheritance)
+# miras olarak ata sınıftan sadece public olanlar 
+# miras olarak çocuk sınıfa geçer
+class Hayvan:
+    def __init__(self,ad):
+        self.__ad = ad#private
+        self.yas=10 #public
+        print("Hayavan sınıfı yapıcı çalıştı.",self.__ad)
+    def ses_cikar(self):
+        print("hayvanı ses çıkardı.")
+
+class Kedi(Hayvan):
+    #method ezme(method override)
+    def __init__(self,ad):
+        self.__ad=ad
+        self.__yas=20
+        print("Kedi Sınıfı yapıcısı çalıştır",self.__ad)
+    def ses_cikar(self):#method ezme(method override)
+        print("miyavvvv...")
+
+class Kopek(Hayvan):
+    def ses_cikar(self):#method ezme(method override)
+        print("hav hav")
+
+class Kus(Hayvan):
+    pass
+
+h1 = Hayvan("hayvan1")
+kd1 = Kedi("kedi 1 ")
+kp1 = Kopek("köpek 1")
+ks1 = Kus("maşuk")
+h1.ses_cikar()
+kd1.ses_cikar()
+kp1.ses_cikar()
+ks1.ses_cikar()
+
+print(h1.yas,kp1.yas,kd1.yas,ks1.yas)
+#%%
 
 # %%
