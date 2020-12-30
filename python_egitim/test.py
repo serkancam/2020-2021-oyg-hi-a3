@@ -1,12 +1,12 @@
-# def topla(l:list):
-#     toplam=0
-#     for i in l:
-#         if isinstance(i, list):
-#             toplam+=topla(i)
-#         if isinstance(i, int) or isinstance(i,float):
-#             toplam+=i
+def topla(l:list):
+    toplam=0
+    for i in l:
+        if isinstance(i, list):
+            toplam+=topla(i)
+        if isinstance(i, int) or isinstance(i,float):
+            toplam+=i
 
-#     return toplam
+    return toplam
 
 
 # test = [[15,[30,5]],1,2,3,20,30,[5,2,[20,30,[20,20,40,[30]]]],[30,30]]
