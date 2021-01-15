@@ -19,12 +19,12 @@ print(f"resim boyutu: {w}x{h}")
 first_px_color = image[0,0]
 print(first_px_color)
 # ilk 200x100 pikseli yeşil yapalım
-image[0:100,0:200]=first_px_color#(0,255,0)
+image[0:100,0:200]=(128,127,50)#first_px_color#(0,255,0)
 # resim üstüne bir çizgi (line) çizelim
 start = (100,70)
 end = (350,380)
-line_color = (0,255,0)
-line_color2 = (255,0,0)
+line_color = (0,255,0)#yeşil
+line_color2 = (255,0,0)#mavi
 thickness = 4
 cv2.line(image,start,end,line_color,thickness)
 # resim üstüne bir dikdörtgen
